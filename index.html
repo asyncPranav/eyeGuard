@@ -1,0 +1,66 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO Metadata -->
+  <title>20-20-20 Eye Care Timer | Protect Your Eyes from Screen Strain</title>
+  <meta name="description" content="Use the 20-20-20 rule timer to reduce eye strain. Look away every 20 minutes for 20 seconds at something 20 feet away. Simple, effective, and free." />
+  <meta name="keywords" content="20-20-20 rule, eye care timer, reduce eye strain, screen break, focus timer, digital eye strain, health, productivity" />
+  <meta name="author" content="asyncPranav" />
+
+
+  <!-- Open Graph for Social Media Sharing -->
+  <meta property="og:title" content="20-20-20 Eye Care Timer" />
+  <meta property="og:description" content="Protect your eyes from screen strain with the 20-20-20 rule timer." />
+  <meta property="og:type" content="website" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.png" type="image/x-icon" />
+
+  <!-- External Resources -->
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://kit.fontawesome.com/a2fa536777.js" crossorigin="anonymous"></script>
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="logo" aria-label="20-20-20 Eye Care Timer">20:20:20</div>
+      <ul>
+        <li><a href="https://github.com/asyncPranav/eyeGuard" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Star on GitHub</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="timer-section" aria-labelledby="timer-heading">
+      <!-- <h1 id="timer-heading" class="sr-only">20-20-20 Eye Care Timer</h1> -->
+
+      <div class="timer" role="timer" aria-live="polite">
+        <span id="minutes">20</span>:<span id="seconds">00</span>
+      </div>
+
+      <div class="status">
+        <div class="light" id="statusLight" aria-hidden="true"></div>
+        <p id="statusText">Status</p>
+      </div>
+
+      <div class="buttons">
+        <button class="btn" id="startBtn" aria-label="Start Timer"><i class="fa-solid fa-play"></i></button>
+        <button class="btn" id="resetBtn" aria-label="Reset Timer"><i class="fa-solid fa-stop"></i></button>
+      </div>
+    </section>
+
+    <audio src="alert.mp3" preload="auto" id="sound"></audio>
+    <audio src="click.mp3" preload="auto" id="playSound"></audio>
+  </main>
+</body>
+
+</html>

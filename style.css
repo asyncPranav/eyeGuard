@@ -1,0 +1,148 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: system-ui, sans-serif;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    background-color: #202020;
+}
+
+header nav {
+    border: 2px solid rgb(41, 41, 41);
+    box-shadow: 2px 2px 20px rgba(11, 11, 11, 0.37);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+}
+
+header nav .logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+    font-variant: small-caps;
+    color: crimson;
+    padding: 0 1em;
+    letter-spacing: 0.1em;
+}
+
+header nav ul {
+    display: flex;
+    gap: 1em;
+    list-style: none;
+    margin: 0 1em;
+}
+
+
+header nav ul li a {
+    color: rgb(200, 200, 200);
+    /* font-weight: bold; */
+    display: inline-block;
+    text-decoration: none;
+    padding: 0.5em;
+    margin: 0.2em;
+    /* border: 2px solid green; */
+}
+
+header nav ul li a:hover {
+    color: gold;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 60px);
+    /* adjust based on nav height */
+}
+
+
+.timer-section {
+    width: 20em;
+    height: 20em;
+    border-radius: 50%;
+    border: 2px solid rgb(41, 41, 41);
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.35), -5px -5px 20px rgba(60, 60, 60, 0.286);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.timer-section .timer, span {
+    font-size: 4rem;
+    font-weight: bold;
+    /* color: goldenrod; */
+    color: rgb(200, 200, 200);
+}
+.timer-section .timer{
+    letter-spacing: 0.05em;
+}
+
+.buttons{
+    margin-top: 1em;
+}
+
+
+.buttons .btn {
+    border: none;
+    outline: none;
+    background: transparent;
+    margin: 0 0.5em;
+    padding: 0.5em;
+    color: crimson;
+    transition: transform 0.1s ease-in-out;
+}
+
+.buttons .btn i {
+    font-size: 1.5rem;
+}
+
+.buttons .btn:active {
+    transform: scale(1.3);
+
+}
+
+.status {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0.2em;
+    /* margin-top: 0.9em; */
+}
+
+.status .light{
+    width: 0.5em;
+    height: 0.5em;
+    background-color: grey;
+    box-shadow: 0 0 10px rgba(128, 128, 128, 0.5);
+    border-radius: 50%;
+    margin: 0 0.4em;
+
+}
+
+.status .light.work {
+  background-color: #00ff88;
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.7);
+}
+
+
+.status .light.break {
+  background-color: gold;
+  box-shadow: 0 0 15px gold;
+
+}
+
+.status p{
+    color: grey;
+    font-size: 1.1rem;
+    letter-spacing: 0.1rem;
+}
+
