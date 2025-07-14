@@ -1,12 +1,29 @@
+// Clock
 const minuteElement = document.getElementById("minutes");
 const secondElement = document.getElementById("seconds");
 const startBtn = document.getElementById("startBtn");
 const resetBtn = document.getElementById("resetBtn");
+
+// Click sounds
 const sound = document.getElementById("sound");
 const playSound = document.getElementById("playSound");
 
+// Status light
 const statusLight = document.getElementById("statusLight");
 const statusText = document.getElementById("statusText");
+
+// Github icon
+const github = document.getElementById("github");
+
+// Setting panel
+const settingBtn = document.getElementById("settingBtn");
+const settingPanel = document.getElementById("settingPanel");
+const saveSetting = document.getElementById("saveSetting");
+
+const focusRange = document.getElementById("focusRange");
+const breakRange = document.getElementById("breakRange");
+const focusValue = document.getElementById("focusValue");
+const breakValue = document.getElementById("breakValue");
 
 
 let minutes = 20;
@@ -47,7 +64,7 @@ function startTimer() {
 function startBreakTimer() {
     isBreak = true;
     minutes = 0;
-    seconds = 20;
+    seconds = customBreakSeconds;
     sound.play();
 
     // Update visual status for break
@@ -60,7 +77,7 @@ function startBreakTimer() {
 
 function resetWorkTimer() {
     isBreak = false;
-    minutes = 20;
+    minutes = customFocusMinutes;
     seconds = 0;
     sound.play();
 
@@ -90,7 +107,7 @@ resetBtn.addEventListener("click", () => {
     clearInterval(intervalId);
     intervalId = null;
     isBreak = false;
-    minutes = 20;
+    minutes = customFocusMinutes;
     seconds = 0;
     startBtn.disabled = false;
 
@@ -103,4 +120,57 @@ resetBtn.addEventListener("click", () => {
 
     updateDisplay();
 });
+
+
+// Github icon sound
+
+github.addEventListener("click", () => {
+    playSound.play();
+});
+
+
+// Setting pannel
+
+let customFocusMinutes = 20;
+let customBreakSeconds = 20;
+
+focusRange.addEventListener("input", () => {
+    focusValue.innerText = focusRange.value;
+});
+
+breakRange.addEventListener("input", () => {
+    breakValue.innerText = breakRange.value;
+});
+
+
+saveSetting.addEventListener("click", () => {
+    customFocusMinutes = parseInt(focusRange.value);
+    customBreakSeconds = parseInt(breakRange.value);
+
+    // Apply new settings immediately
+    minutes = customFocusMinutes;
+    seconds = 0;
+
+    settingPanel.hidden = true;
+    playSound.play();
+    updateDisplay();
+});
+
+settingBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    settingPanel.hidden = !settingPanel.hidden;
+    playSound.play();
+});
+
+
+document.addEventListener("click", (e) => {
+  if (
+    !settingPanel.contains(e.target) &&
+    !settingBtn.contains(e.target)
+  ) {
+    settingPanel.hidden = true;
+  }
+});
+
+
 

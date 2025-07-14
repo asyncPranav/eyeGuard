@@ -31,6 +31,7 @@ header nav .logo {
     color: crimson;
     padding: 0 1em;
     letter-spacing: 0.1em;
+    padding: 0.5em 1em;
 }
 
 header nav ul {
@@ -38,17 +39,19 @@ header nav ul {
     gap: 1em;
     list-style: none;
     margin: 0 1em;
+    align-items: center;
 }
 
 
 header nav ul li a {
-    color: rgb(200, 200, 200);
     /* font-weight: bold; */
     display: inline-block;
     text-decoration: none;
-    padding: 0.5em;
+    font-size: 1.4rem;
+    color: rgb(200, 200, 200);
+    padding: 0.5em 0;
     margin: 0.2em;
-    /* border: 2px solid green; */
+    transition: transform 0.5s ease-in-out;
 }
 
 header nav ul li a:hover {
@@ -59,7 +62,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: calc(100vh - 60px);
+    height: calc(100vh - 69px);
     /* adjust based on nav height */
 }
 
@@ -76,17 +79,18 @@ main {
     justify-content: center;
 }
 
-.timer-section .timer, span {
+.timer-section .timer,span {
     font-size: 4rem;
     font-weight: bold;
     /* color: goldenrod; */
     color: rgb(200, 200, 200);
 }
-.timer-section .timer{
+
+.timer-section .timer {
     letter-spacing: 0.05em;
 }
 
-.buttons{
+.buttons {
     margin-top: 1em;
 }
 
@@ -118,7 +122,7 @@ main {
     /* margin-top: 0.9em; */
 }
 
-.status .light{
+.status .light {
     width: 0.5em;
     height: 0.5em;
     background-color: grey;
@@ -129,20 +133,84 @@ main {
 }
 
 .status .light.work {
-  background-color: #00ff88;
-  box-shadow: 0 0 15px rgba(0, 255, 136, 0.7);
+    background-color: #00ff88;
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.7);
 }
 
 
 .status .light.break {
-  background-color: gold;
-  box-shadow: 0 0 15px gold;
+    background-color: gold;
+    box-shadow: 0 0 15px gold;
 
 }
 
-.status p{
+.status p {
     color: grey;
     font-size: 1.1rem;
     letter-spacing: 0.1rem;
 }
 
+/* setting panel */
+
+#settingBtn{
+    background-color: transparent;
+    color: rgb(188, 188, 188);
+    border: none;
+    font-size: 1.5rem;
+    padding: 0.5em 0;
+    margin: 0.2em;
+    transition: transform 0.4s ease-in-out;
+}
+
+#settingBtn:hover{
+    /* transform: rotate(180deg); */
+    color: gold;
+}
+
+.settingPanel {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    position: fixed;
+    top: 5em;
+    right: 1em;
+    background-color: #202020;
+    border: 2px solid rgb(41, 41, 41);
+    padding: 1em;
+    border-radius: 0.5em;
+    color: rgb(188, 188, 188);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.35);
+    z-index: 100;
+    width: 15em;
+}
+
+.settingPanel label {
+    display: block;
+    margin-top: 1em;
+    font-size: 0.9rem;
+}
+
+.settingPanel span{
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.settingPanel input[type="range"] {
+    width: 100%;
+}
+
+.settingPanel button {
+    margin-top: 2em;
+    padding: 0.4em 1em;
+    background: green;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 0.3em;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+}
+
+#settingPanel[hidden] {
+  display: none;
+}
